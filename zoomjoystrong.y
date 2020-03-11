@@ -28,9 +28,9 @@
 
 drawing:	error
 	|	shape_list
-	|	shape_list END
+	|	shape_list end
 	|	drawing shape_list
-	|	drawing shape_list END
+	|	drawing shape_list end
 ;
 
 
@@ -58,6 +58,10 @@ line:	LINE INT INT INT INT
 
 point:	POINT INT INT 
 		{ point($2, $3); }
+;
+
+end:	 END
+		{ exit(0); }
 ;
 
 color:		SET_COLOR INT INT INT  
